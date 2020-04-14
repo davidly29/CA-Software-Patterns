@@ -6,25 +6,15 @@
 <body>
 <table>
     <thead>
-    <tr>
-        <th> Title </th>
-        <th> Author </th>
-    </tr>
     </thead>
     <tr th:if="${people.empty}">
-        <td colspan="2"> No Books Available </td>
+        <td colspan="2"> No Users Available</td>
     </tr>
     <ul th:each="person : ${peoples}">
        Name<li th:text="${person.name}"></li>
         Address<li th:text="${person.shippingAddress}"></li>
         <br>
     </ul>
-<!--    <tbody>-->
-<!--    <tr th:each="person : ${peoples}">-->
-<!--        <span th:text="${peoples.name}"> Title </span>-->
-<!--        <span th:text="${peoples.shippingAddress}">Address </span>-->
-<!--    </tr>-->
-<!--    </tbody>-->
 </table>
 </body>
 </html>

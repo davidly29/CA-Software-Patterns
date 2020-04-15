@@ -24,5 +24,12 @@ public class AdminService {
 
     public Optional<Admin_Account> findById(long id) {return admin_repo.findById(id);}
 
+    public boolean validateLogin(Admin_Account acc) {
+        if (admin_repo.findByUsername(acc.getUsername()) != null) {
+            return true;
+        }
+        return false;
+    }
+    public Admin_Account findByUsername(String name) {return admin_repo.findByUsername(name);}
     public void deleteById(long id) { admin_repo.deleteById(id);}
 }

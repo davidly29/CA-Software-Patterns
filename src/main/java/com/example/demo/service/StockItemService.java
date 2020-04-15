@@ -16,6 +16,7 @@ public class StockItemService {
     public StockItemService(Stock_Item_Repo itemRepo) {
         this.itemRepo = itemRepo;
     }
+
     public List<Stock_Item> findAll() {
         return itemRepo.findAll();
     }
@@ -25,6 +26,8 @@ public class StockItemService {
     }
 
     public Optional<Stock_Item> findById(long id) {return itemRepo.findById(id);}
+
+    public Stock_Item findByStockItem(String name){return itemRepo.findByStockTitle(name);}
 
     public void deleteById(long id) { itemRepo.deleteById(id);}
 }

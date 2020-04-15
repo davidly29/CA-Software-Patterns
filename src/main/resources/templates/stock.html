@@ -4,9 +4,17 @@
     <title>Products</title>
 </head>
 <body>
+<form th:action="@{'/getStockItem/{id}}" method="get">
+    <fieldset>
+            <input type="number" name="id" id="id"
+                   placeholder="Item Id" required="true" autofocus="true"/>
+    </fieldset>
+</form>
+
 <tr th:if="${stocks.empty}">
     <td colspan="2"> No Stock Available </td>
 </tr>
+<table>
 <ul th:each="stock : ${stocks}">
     Name<li th:text="${stock.stockTitle}"></li>
     Manufacture<li th:text="${stock.manufacturerName}"></li>
@@ -14,5 +22,7 @@
     Category<li th:text="${stock.itemCategory}"></li>
     <br>
 </ul>
+</table>
+
 </body>
 </html>

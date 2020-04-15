@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dao.Customer_Account;
+import com.example.demo.dao.Shopping_Cart;
 import com.example.demo.service.CustomerService;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
@@ -47,6 +48,11 @@ public class CustomerController {
     public Optional<Customer_Account> getCustomerById(@PathVariable long id) {
         return customerService.findById(id);
     }
+//    @PostMapping("/addToBasket")
+//    public Customer_Account addBasket(Customer_Account acc) {
+//        Shopping_Cart cart = acc.getCustomerCart();
+//        customerService.save(acc);
+//    }
     @DeleteMapping("/remove/{id}")
     void deleteCustomer(@PathVariable Long id ) {
         customerService.deleteById(id);

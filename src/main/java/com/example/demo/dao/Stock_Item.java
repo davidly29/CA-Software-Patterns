@@ -8,7 +8,7 @@ public class Stock_Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @Column(name = "stockTitle")
     private String stockTitle;
@@ -49,7 +49,7 @@ public class Stock_Item {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
